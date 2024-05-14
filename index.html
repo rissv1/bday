@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html>
 <head>
@@ -10,42 +10,76 @@
         }
 
         header {
-            height: 30vh;
+            height: 60vh;
         }
 
         a {
             text-decoration: none;
         }
 
+        img {
+            margin: auto;
+            width: 10rem;
+            animation-name: selectpop;
+            animation-duration: 2s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+
+        h1 {
+            margin-block-start: 0px;
+            margin-inline-start: 0px;
+        }
+
         .wrapper {
             width: 100vw;
             height: 100vh;
-            background-color: pink;
+            background-color: #c4a7dc;
         }
 
         .title {
             display: flex;
-            color: deeppink;
+            color: #2c232e;
+            text-align: center;
             justify-content: center;
-            padding-top: 20px;
-            font-family: 'Adobe Clean';
-            font-size: 3vh;
+            padding-top: 100px;
+            padding-left: 20px;
+            font-family: 'Helvetica', Arial, sans-serif;
+            font-weight: 100;
+            font-size: 7rem;
+            letter-spacing: 20px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .title2 {
+            display: flex;
+            color: #2c232e;
+            text-align: center;
+            justify-content: center;
+            font-family: 'Helvetica', Arial, sans-serif;
+            font-weight: bolder;
+            font-size: 3.5rem;
+            letter-spacing: 11px;
+            -webkit-font-smoothing: antialiased;
         }
 
         .subtitle {
             display: flex;
-            color: deeppink;
             justify-content: center;
-            font-family: 'Adobe Clean';
-            font-size: 2vh;
-            font-weight: bolder;
+            align-items: center;
+            text-align: center;
+            margin-top: 150px;
+            color: bisque;
+        }
+
+        .subtext {
+            font-family: 'Adobe Clean', Arial, sans-serif;
+            color: #2c232e;
+            font-size: 1.5rem;
+            font-weight: 100;
         }
 
         .selectpre {
-            position: absolute;
-            right: 50%;
-            left: 50%;
-            height: 70vh;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -53,28 +87,25 @@
         }
 
         .select {
-            display: grid;
-            grid-template-columns: 50% 50%;
-            grid-template-rows: 100%;
-            height: 100vh;
-            background-color: black;
-            z-index: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .imgcenter {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            object-fit: cover;
         }
 
         .selector {
             display: flex;
             justify-content: center;
             align-items: center;
-            opacity: 50%;
+            opacity: 100%;
             z-index: 0;
             cursor: pointer;
-        }
-
-        .selector:hover {
-            animation-name: selectpop;
-            animation-duration: .5s;
-            animation-iteration-count: 1;
-            animation-fill-mode: forwards;
         }
 
         .sel1 {
@@ -100,7 +131,7 @@
         .pressable {
             background-color: white;
             padding: 50px 50px 50px 50px;
-            border-radius: 10px;
+            border-radius: 30px;
             font-family: 'Adobe Clean';
             font-size: 10vh;
             font-weight: bolder;
@@ -109,38 +140,20 @@
             cursor: pointer;
         }
 
-        .pressable:hover {
-            animation-name: selectpop_nop;
-            animation-duration: .5s;
-            animation-iteration-count: 1;
-            animation-fill-mode: forwards;
-        }
-
         @keyframes selectpop {
             0% {
-                transform: scale(100%);
-                opacity: 50%;
-                z-index: 1;
+                width: 10rem;
+                transform: translateY(60%);
+                opacity: 0%;
             }
 
             100% {
-                transform: scale(105%);
+                width: 30rem;
+                transform: translateY(25%);
                 opacity: 100%;
-                z-index: 1;
             }
         }
-
-        @keyframes selectpop_nop {
-            0% {
-                transform: scale(100%);
-                z-index: 1;
-            }
-
-            100% {
-                transform: scale(105%);
-                z-index: 1;
-            }
-        }
+   
     </style>
     <script type="text/javascript">
 
@@ -155,28 +168,21 @@
 </head>
 <body class="wrapper">
     <header  id="gone">
-        <div class="title">
-            <h1>Hello, pookiti!!</h1>
+        <div>
+            <div>
+                <span class="title">HELLO</span>
+                <span class="title2">ERNESTINE</span>
+            </div>
         </div>
         <div class="subtitle">
-            <span>
-                I know I already asked u to be my valentino pookitino... BUT... I will ask again!
-            </span>
-        </div>
-        <div class="title">
-            <h1>Will u be my valentino pookitino?????</h1>
+            <h1 class="subtext">KADANGI NEGALIU TAU PADOVANOTI GELIŲ...</h1>
         </div>
     </header>
     <div class="selectpre">
-        <div class="pressable" onclick="delet(this)">ANSWER</div>
+        <div class="pressable" onclick="delet(this)">PRESS</div>
     </div>
-    <div id="selecting" class="select hidden">
-        <a href="https://www.youtube.com/watch?v=ZC6lk1Wz6i4&ab_channel=RottenWilk" target="_blank" class="selector sel1">
-            <span class="option">YES</span>
-        </a>
-        <a href="https://www.youtube.com/shorts/JGtNdSeHkSo" target="_blank" class="selector sel2">
-            <span class="option">NO</span>
-        </a>
+    <div id="selecting" class="hidden">
+        <img class="imgcenter" src="flowers.png" alt="Alternate Text" />
     </div>
 </body>
 </html>
